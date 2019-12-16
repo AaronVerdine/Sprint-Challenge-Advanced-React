@@ -4,7 +4,9 @@ import axios from "axios";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = "";
+    this.state = {
+      players: []
+    };
   }
 
   componentDidMount() {
@@ -15,7 +17,8 @@ class App extends React.Component {
     axios
       .get("http://localhost:5000/api/players")
       .then(res => {
-        console.log(res);
+        console.log(res.data);
+        this.setState({ players: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -23,7 +26,11 @@ class App extends React.Component {
   };
 
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <h1>Top 100 Women's Footballers</h1>
+      </div>
+    );
   }
 }
 
