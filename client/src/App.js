@@ -29,6 +29,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Top 100 Women's Footballers</h1>
+        {this.state.players.map((player) => {
+          return (
+    
+            
+          );
+        })}
       </div>
     );
   }
