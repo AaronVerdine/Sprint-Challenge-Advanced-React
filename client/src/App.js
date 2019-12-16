@@ -5,6 +5,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      name: "",
+      country: "",
+      searches: "",
       players: []
     };
   }
@@ -17,8 +20,11 @@ class App extends React.Component {
     axios
       .get("http://localhost:5000/api/players")
       .then(res => {
-        console.log(res.data);
-        this.setState({ players: res.data });
+        console.log(res.data[0]);
+        this.setState({
+          // name: res.data[0].name
+          players: res.data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -29,10 +35,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Top 100 Women's Footballers</h1>
-        {this.state.players.map((player) => {
+        {this.state.players.map(player => {
           return (
-    
-            
+            <div>
+              <h2>{player.name}</h2>
+              <h3>{player.country}</h3>
+              <h4>{player.searches}</h4>
+            </div>
           );
         })}
       </div>
