@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+// import PlayerCard from "./PlayerCard";
+
 class App extends React.Component {
   constructor() {
     super();
@@ -37,7 +39,8 @@ class App extends React.Component {
         <h1>Top 100 Women's Footballers</h1>
         {this.state.players.map(player => {
           return (
-            <div>
+            <div key={player.id}>
+              {/* <PlayerCard /> */}
               <h2>{player.name}</h2>
               <h3>{player.country}</h3>
               <h4>{player.searches}</h4>

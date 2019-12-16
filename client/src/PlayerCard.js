@@ -1,11 +1,20 @@
 import React from "react";
+import { Card } from "semantic-ui-react";
+
+import "./App.css";
 
 const PlayerCard = props => {
   return (
-    <div>
-      <h1>{props.name}</h1>
-      <h2>{props.country}</h2>
-      <h3>{props.searches}</h3>
+    <div className="player-card" key={props.id}>
+      <Card.Group stackable={false}>
+        <Card color="blue" raised={true}>
+          <Card.Content>
+            <Card.Header className="card-header">{props.name}</Card.Header>
+            <Card.Meta>{props.country}</Card.Meta>
+            <Card.Meta>{props.searches}</Card.Meta>
+          </Card.Content>
+        </Card>
+      </Card.Group>
     </div>
   );
 };
