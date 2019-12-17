@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-// import PlayerCard from "./PlayerCard";
+import "./App.css";
+import PlayerCard from "./PlayerCard";
 
 class App extends React.Component {
   constructor() {
@@ -36,14 +37,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Top 100 Women's Footballers</h1>
+        <h1 className="header">Top 100 Women's Footballers</h1>
         {this.state.players.map(player => {
           return (
             <div key={player.id}>
-              {/* <PlayerCard /> */}
-              <h2>{player.name}</h2>
-              <h3>{player.country}</h3>
-              <h4>{player.searches}</h4>
+              <PlayerCard
+                name={player.name}
+                country={player.country}
+                searches={player.searches}
+              />
             </div>
           );
         })}

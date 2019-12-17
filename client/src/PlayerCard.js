@@ -5,7 +5,7 @@ import "./App.css";
 
 const PlayerCard = props => {
   return (
-    <div className="player-card" key={props.id}>
+    <div className="player-list-grid-view" key={props.id}>
       <Card.Group stackable={false}>
         <Card color="blue" raised={true}>
           <Card.Content>
