@@ -11,7 +11,7 @@ const PlayerCard = props => {
           <Card.Content>
             <Card.Header className="card-header">{props.name}</Card.Header>
             <Card.Meta>{props.country}</Card.Meta>
-            <Card.Meta>{props.searches}</Card.Meta>
+            <Card.Meta># of Searches: {props.searches}</Card.Meta>
           </Card.Content>
         </Card>
       </Card.Group>
