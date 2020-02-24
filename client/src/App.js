@@ -40,6 +40,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1 className="header">Top 100 Women's Footballers</h1>
+        <p>*Ranked by number of times searched</p>
         {this.state.players.map(player => {
           return (
             <div key={player.id}>
